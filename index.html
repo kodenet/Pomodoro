@@ -9,6 +9,7 @@
 <body>
     <div class="container">
         <h1>Pomodoro Timer</h1>
+        <div id="focus-display" class="focus-display"></div>
         <div class="timer">
             <span id="minutes">25</span>:<span id="seconds">00</span>
         </div>
@@ -28,6 +29,13 @@
         <button id="stopSound" class="stop-sound">Stop Sound</button>
     </div>
     <audio id="timerSound" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3"></audio>
+    <div id="focus-modal" class="modal">
+        <div class="modal-content">
+            <h2>What are you focusing on?</h2>
+            <input type="text" id="focus-input" placeholder="Enter your focus task...">
+            <button id="focus-submit">Start Focusing</button>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html> 
