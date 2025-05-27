@@ -104,12 +104,22 @@ function countdown() {
 // Show focus modal
 function showFocusModal() {
     focusModal.classList.add('show');
+    focusInput.value = ''; // Clear previous input
     focusInput.focus();
 }
 
 // Hide focus modal
 function hideFocusModal() {
     focusModal.classList.remove('show');
+    focusInput.value = ''; // Clear input when canceling
+}
+
+// Handle modal click outside
+function handleModalClick(event) {
+    // If clicked element is the modal backdrop (not the content)
+    if (event.target === focusModal) {
+        hideFocusModal();
+    }
 }
 
 // Set focus task
@@ -209,6 +219,14 @@ focusSubmit.addEventListener('click', setFocusTask);
 focusInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         setFocusTask();
+    }
+});
+
+// Add modal close events
+focusModal.addEventListener('click', handleModalClick);
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && focusModal.classList.contains('show')) {
+        hideFocusModal();
     }
 });
 
