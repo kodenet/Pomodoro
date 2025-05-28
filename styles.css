@@ -19,6 +19,8 @@ body {
     border-radius: 1rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: min(90%, 450px);
+    margin: 1rem auto;
 }
 
 h1 {
@@ -217,4 +219,25 @@ button {
     content: "Currently focusing on: ";
     font-weight: 700;
     color: #34495e;  /* Keep the label in original dark color for contrast */
+}
+
+/* Responsive design adjustments */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+        width: min(95%, 450px);
+    }
+
+    .timer {
+        font-size: 4.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .buttons, .mode-buttons {
+        gap: 0.75rem;
+    }
+
+    button {
+        padding: 0.9rem 1.25rem;
+    }
 } 
